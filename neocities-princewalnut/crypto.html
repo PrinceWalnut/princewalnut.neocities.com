@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The web site of princewalnut</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel='icon' href='/logo.png' type='image/png'>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>       
+    <script type="text/javascript" src="/frequency_analysis.js"></script>       
+  </head>
+  <body>
+    <h1>Below you'll find some neat crypto stuff</h1>
+    <br>
+    <p>Click the button below to generate a 1000 character random string for the frequency analyzer.</p>
+    <button type="button" onclick="rand_string()">Random String</button>
+    <br>
+    <p>Here's an interactive frequency analyzer.</p> 
+    <textarea type="text" placeholder="Type a string here!" id="freq_input" style="width:800px; height:150px;"></textarea>
+    <button type="button" onclick="freq_histogram(freq_input.value)">Analyze the frequencies!</button>
+    <br>
+  
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

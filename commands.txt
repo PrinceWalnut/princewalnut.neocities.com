@@ -1,0 +1,8 @@
+# Restart ssh daemon
+systemctl restart sshd
+
+# Run reverse-proxy in background
+caddy reverse-proxy --from api.princewalnut.com --to :5000 > hit_counter.log 2>&1 &
+
+# Run world.py flask server in background
+python server_scripts/world.py > /dev/null 2>&1 &

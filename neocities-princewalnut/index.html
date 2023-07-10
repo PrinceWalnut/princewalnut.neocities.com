@@ -40,7 +40,7 @@
     <script>
       function hello() {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/hello', true);
+        xhr.open('POST', 'https://api.princewalnut.com/hello', true);
         xhr.onreadystatechange = function() {
           if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             var response = xhr.responseText;

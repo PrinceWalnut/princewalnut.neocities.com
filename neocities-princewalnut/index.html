@@ -18,6 +18,9 @@
     <br>
     <h2>Here we play with physics, maths, crystallography, diffraction, cryptography, programming, computational stuff, and penguins.</h2>
     <br>
+    <button type="button" onclick="hello()">Say hi to me!</button>
+    <p id="result"></p>
+    <br>
     <a href="pages/cheat_sheets.html">Cheat sheets</a>
     <br>
     <a href="pages/crypto.html">Cryptography stuff</a>
@@ -33,6 +36,20 @@
     <p>If you're interested in learning more about me as a professional and not some rando on the interwebz, see my website <a href="http://www.rickalejandrohewitt.com">here.</a></p>
     <br>
     <img src="pictures/lira_family_crest.jpg" style="height:30%">
+
+    <script>
+      function hello() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/hello', true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            var response = xhr.responseText;
+            document.getElementById('result').textContent = response;
+          }
+        };
+        xhr.send();
+      }
+    </script>
   </body>
 
 </html>
